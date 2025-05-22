@@ -220,14 +220,14 @@
     display: inline-block; /* Elementet bliver inline, men tillader paddig, margin og bredde/højde */
     background-color: #145C9E; /* Baggrundsfarven bliver blå  */
     color: white; /* Teksten bliver hvid */
-    padding: 0.6rem 32px; /* Giver luft indvendigt: 0.6ram top og bund 32px venstre og højre  */
+    padding: 10px 20px; /* Giver luft indvendigt: 0.6ram top og bund 32px venstre og højre  */
     border-radius: 5px; /* Hjørnerne bliver runde */
     text-decoration: none; /* Fjerner undersktegning */
     text-align: center; /* Teksten centrer */
     margin-top: 10px; /* Afstand over teksten */
   }
   
-  
+
   .forside__knap:hover{
     background-color:#1380E5; /* Baggrundsfarven bliver blå */
     color:#FBFFFE; /* Teksten bliver hvid */
@@ -678,7 +678,7 @@
   .om__intro {
     display: flex; /* Elementer lægger side om side */ 
     gap: 20px; /* Afstanden mellem hvert element */
-    align-items: center; /* Centrer elementer lodret */
+    align-items: flex-start; /* Centrer elementer lodret */
     flex-direction: row; /* Elementerne lægger side om side vandret */
     flex-wrap: wrap; /* Indholdet bryder til næste linje, hvis der ikke er plads */
   }
@@ -702,7 +702,8 @@
   
   .om__billed-img {
     width: 100%; /* Tager hele bredden */
-    height: 100%; /* Tager hele højden */
+    height: auto; /* Tager hele højden */
+    max-width: 400px;
     object-fit: cover; /* Beskærer billedet, så det fylde det hele uden at ødelægges */
   }
 
@@ -755,7 +756,7 @@
     display: inline-block; /* Elemterne stå ved siden af hinaden */
     background-color: #145C9E; /* Baggrundsfarven er blå */
     color: white; /* Teksten er hvid */
-    padding: 12px 28px; /* Giver luft indvendigt: 12px top og bund 28px venstre og højre  */
+    padding: 10px 20px; /* Giver luft indvendigt: 12px top og bund 28px venstre og højre  */
     border-radius: 5px; /* Hjørnerne bliver runde */
     text-decoration: none; /* Fjerner undersktegning */
     text-align: center; /* Teksten centrer */
@@ -832,7 +833,7 @@
     background-color: #145C9E; /* Baggrundsfarven er blå */
     color: #FBFFFE; /* Teksten er hvid */
     border: none; /* Fjerner standardkant */ 
-    border-radius: 4px; /* Hjørnerne bliver runde */
+    border-radius: 5px; /* Hjørnerne bliver runde */
     cursor: pointer; /* Gør musen til klik-hånd, over knappen */ 
     width: 100px; /* Fast bredde */
     align-self: center; /* Centrer elementet lodret, uafhængiget af andre elementer */
@@ -891,7 +892,7 @@
 
   /* Responsiv tilpasning */
   @media (max-width: 600px) { /* Alt CSS aktiveres, hvis skærmbredden er 600px eller mindre */
-    .intro {
+    .om__intro {
       flex-direction: column; /* Ændres fra row til colum - stables lodret i stedet for vandret */
       text-align: center; /* Teksten centrerer */
     }
@@ -944,6 +945,21 @@
 
     .om__intro{
       flex-direction: column; /* Elementerne bliver en lodret kolonne og under hinanden */
+      text-align: center;
+      align-items: center;
+    }
+
+    .om__billed-wrapper{
+      justify-content: center;
+      margin-top: 16px;
+      width: 100%;
+    }
+
+    .om__billed-img{
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      display: block;
     }
 
     /* Footer */
