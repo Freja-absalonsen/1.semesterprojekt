@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Fortæller browseren, at tegnsættet er UTF-8, som understøtter danske bogstaver (æ,ø,å) og mange specialtegn -->
+  <meta charset="UTF-8">
+
+  <!-- Gør siden responsiv. Width, følger breddens enhed. Intitale, siden kan ikke zoomes ind eller ud som standard. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Linker til et ekstern CSS-stylesheet -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Titlen i browseren -->
+  <title>Absalonsen.com</title>
+
+  <!-- Skrifttype hentet fra google og refere til stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <!-- Header og Navigationsbar -->
+  <header class="navbar">
+    <div class="navbar__logo-container">
+      <img src="img/Logo.png" alt="Logo" class="navbar__logo-img">
+      <a href="index.html" class="navbar__logo-text">Absalonsen.com</a>
+    </div>
+   
+    <!-- Navigations punkter -->
+    <nav class="navbar__nav">
+      <ul class="navbar__links">
+        <li class="navbar__item">
+          <a href="portefolie.html" class="navbar__link">Portefolie</a>
+        </li>
+
+        <li class="navbar__item">
+          <a href="ommig.html" class="navbar__link">Om mig</a>
+        </li>
+
+        <li class="navbar__item">
+          <a href="kontakt.html" class="navbar__link navbar__link--button" >Kontakt</a>
+        </li>
+      </ul>
+
+      <!-- Burgerns streger -->
+      <div class="navbar__burger">
+      <div class="navbar__burger-line"></div>
+      <div class="navbar__burger-line"></div>
+      <div class="navbar__burger-line"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Javascript til burger menu fået inspiration fra denne video https://www.youtube.com/watch?v=aNDqzlAKmZc -->
+  <script>
+  const burger =document.querySelector('.navbar__burger');
+  const nav = document.querySelector('.navbar__links');
+
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('navbar__links-active');
+  });
+  </script>
+
+  <!-- Main-Kontakt -->
+  <!-- Har tager inspiration ud fra denne video https://www.youtube.com/watch?v=gWgzzVVcqfA til kontaktformularien -->
+  <main class="kontakt">
+  <section class="kontakt__container">
+    <div class="kontakt__tekst">
+      <h2 class="kontakt__overskrift">Kontakt</h2>
+      <p class="kontakt__beskrivelse">Du er meget velkommen til at tage kontakt - hvad enten det drejer sig om spørgsmål, 
+         mulige samarbejder eller en uformel snak. Jeg ser frem til at høre fra dig.</p>
+
+      <form class="kontakt__form">
+      
+        <!-- Navn -->
+      <label for="navn" class="kontakt__lable" >Navn</label>
+      <input type="text" id="navn" name="navn" class="kontakt__input" placeholder="Navn" autocomplete="off" required>
+
+      <!-- Emne -->
+      <label for="emne" class="kontakt__lable">Emne</label>
+      <input type="text" id="emne" name="Emne" class="kontakt__input" placeholder="Emne" autocomplete="off" required>
+      
+      <!-- Email -->
+      <label for="email" class="kontakt__lable" >Email</label>
+      <input type="text" id="email" name="Email" class="kontakt__input" placeholder="Eksempel@gamil.com" autocomplete="off" required>
+      
+      <!-- Besked -->
+      <label for="besked" class="kontakt__lable">Besked</label>
+      <textarea id="besked" name="besked" class="kontakt__textarea" rows="5" placeholder="Hej, jeg vil gerne indgå et samarbejde...." required></textarea>
+      
+      <!-- Send knap -->
+      <button type="submit" class="kontakt__knap">Send</button>
+      </form>
+    </div>
+
+      <!-- Billed -->
+      <div class="kontakt__billede-wrapper">
+      <img src="img/Kontakt-mig.png" alt="Freja stå med computer og telefon i hånden" class="kontakt__img">
+      </div>
+  </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- Kontakt -->
+    <div class="footer__sektion footer__sektion-venstre">
+     <h3 class="footer__overskrift" >Kontakt</h3>
+     
+     <ul class="footer__liste" >
+       <li class="footer__item" >Email: 
+         <a href="mailto:freja.absalonsen.laursen@gmail.com" class="footer__link">freja.absalonsen.laursen@gmail.com</a>
+       </li>
+ 
+       <li class="footer__item" >Telefon: 
+         <a href="tel:+4525775684" class="footer__link" >+45 25775684</a>
+       </li>
+     </ul>
+    </div>
+ 
+    <!-- Genveje -->
+    <div class="footer__sektion footer__sektion-hojre">
+     <h3 class="footer__overskrift" >Genveje</h3>
+     
+     <ul class="footer__liste">
+       <li class="footer__item">
+         <a href="index.html" class="footer__link">Forside</a>
+       </li>
+ 
+       <li class="footer__item">
+         <a href="portefolie.html" class="footer__link">Portefolie</a>
+       </li>
+ 
+       <li class="footer__item">
+         <a href="ommig.html" class="footer__link">Om mig</a>
+       </li>
+ 
+       <li class="footer__item">
+         <a href="kontakt.html" class="footer__link">Kontakt</a>
+       </li>
+     </ul>
+    </div>
+   </footer>
+  </body>
+</html>
+  
+

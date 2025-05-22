@@ -1,0 +1,965 @@
+
+/* styles.css */
+
+  /* Fjerner standardmargen og -padding på alle ellementer
+  og ændre box-sizing, så padding og border regnes med i elementers størrelse */
+* {
+    margin: 0; /* Fjerner ydre afstad omrking elemnter */
+    padding: 0; /* Fjerner indre afstand i elementer */
+    box-sizing: border-box; /* Ændre hvordan bredde og højde beregnes */
+  }
+  
+  /* Sætter skrifttype og baggrundsfarve på body og elementer med rufina-regular.*/
+  body,
+  .rufina-regular {
+    font-family: Rufina, serif; /* Skrift type */
+    font-size: 20px; /* Tekst størelsen */
+    background-color:#FBFFFE; /* Baggrundsfarve hvis */
+    line-height: 1.6; /* Linjeafstanden */
+  }
+
+  /* Angivelse af forksellige skriftstørrelse til overskrifter */
+  h1{
+    font-size: 30px; /* Teksten størrelse */
+  }
+
+  h2{
+    font-size:25px; /* Teksten størrelse */
+  }
+
+  h3{
+    font-size: 20px; /* Teksten størrelse */
+  }
+
+  /* Definere to typer af skrifttypen rufina */
+  .rufina-regular {
+    font-family: "Rufina", serif; 
+    font-weight: 500; /* Teksten vægt */
+    font-style: normal; /* Skrifttypen*/
+  }
+  
+  .rufina-bold {
+    font-family: "Rufina", serif;
+    font-weight: 800; /* Teksten vægt*/
+    font-style: normal; /* Skrifttypen */
+  }
+
+  /* Header */
+
+  /* Navigation */
+  .navbar {
+    display: flex;   /* Lægger logo og navigation side om side */
+    justify-content: space-between; /* Fordeler pladsen mellem dem med luft imellem dem */
+    align-items: center; /* Centrere elementerne lodret */
+    background-color: #1380E5; /* Baggrunden bliver blå */
+    padding: 16px 32px; /* Giver luft indvendigt: 16px top og bund 32 venstre og højre  */
+    position: sticky;   /* Navigationsbaren er fast til toppen ved scroll */
+    width: 100%; /* Navigationsbaren fylder hele bredden */
+    z-index: 1000; /* Giver den høj stabelrækkefølge, så navigationsbaren bliver ovenpå andre elementer ved scroll */
+    top: 0; /* Den skal klæbe sig til toppen af vinduet */
+    box-shadow: 0 2px 6px #717171; /* Tilføjer en skygge under navigationsbaren */
+  }
+
+  /* Logo og tekst ved siden af */
+  .navbar__logo-container {
+    display: flex; /* Gør den til en flexboks, så logo og tekst ligger på linje vandret */
+    align-items: center; /* Centrere elementerne lodret */
+    gap: 0.5rem; /* Afstanden mellem hvert elementerne */
+  }
+  
+  .navbar__logo-img {
+    height: 40px; /* Fast højde på 40 px, bredde er automatisk*/
+  }
+  
+  .navbar__logo-text {
+    color: white; /* Teksten bliver hvid */
+    font-weight: bold; /* Teksten bliver fed */
+    font-size: 25px; /* Tekststørrelsen */
+    text-decoration: none; /* Fjerner understregning */
+  }
+
+  /* Logo teksten skifter fra hvid til sort når musen er over */
+  .navbar__logo-text:hover{
+    color:#090C08 ; /* Teksten bliver sort */
+    transition: all 0.3s ease; /* Farveskiftet sker over 0.3 sekunder, mere blød */
+  }
+  
+  /* Navigationslinks */
+  .navbar__links {
+    list-style: none; /* Fjerner punkterne på listeelementet */
+    display: flex; /* Viser listeelemter i en række ved siden af hinanden */
+    gap: 32px; /* Afstanden mellem hvet element */
+  }
+  
+  .navbar__item{
+    list-style: none; /* Fjerner punkterne på listeelementet */
+  }
+
+  .navbar__link{
+    color: #FBFFFE; /* Texten bliver hvid */
+    text-decoration: none; /* Fjerner understegning */
+    font-weight: bold; /* Gør teksten fed */
+  }
+  
+  /* Teskten skifter fra hvid til sort når musen er over*/
+  .navbar__link:hover{
+    color:#090C08 ; /* Teksten bliver sort */
+    transition: all 0.3s ease; /* Farveskiftet sker over 0.3 sekunder, mere blød */
+  }
+
+  .navbar__link--button{
+    background-color: #3b5998; /* Baggrunden farve blå */
+    padding: 6.4px 12.8px; /* Giver luft indvendig 6.4px top og bund 12.8 venstre og høhjre */
+    border-radius: 5px; /* Hjørnerne bliver runde */
+    text-decoration: none; /* Fjerner undersktegning */
+  }
+  
+  /* Teskten skifter fra hvid til sort og bagrunden fra blå til hvid når musen er over */
+  .navbar__link--button:hover{
+    background-color: #FBFFFE; /* Baggrunds farve hvid */
+    color:#090C08; /* Teksten bliver sort */
+    transition: all 0.3s ease; /* Farveskiftet sker over 0.3 sekunder, mere blød */
+  }
+
+  /* Navigation Burger bruges kun på mobil */
+  /* Fået inspiration fra denne video https://www.youtube.com/watch?v=aNDqzlAKmZc */
+  .navbar__burger{
+  display: none; /* Skjuler burger menu ikonet */
+  cursor: pointer; /* Gør musen til klik-hånd, over knappen */
+  flex-direction: column; /* De 3 streger kommer under hinanden */
+  gap: 5px; /* Afstanden mellem hvert element */
+ }
+
+ .navbar__burger-line{
+  width: 25px; /* Bredden på hver burger linje */
+  height: 3px; /* Højden på hver burger linje */
+  background-color: #FBFFFE; /* Burger linjernes farve */
+  }
+  
+  main {
+  padding: 35px; /* Giver luft hele vejen rundt om alt der er i main på alle sider */
+  }
+  
+  /* Main forside */
+  /* Sektion indtro */
+  .forside__intro {
+    display: flex; /* Elementer lægger side om side */ 
+    align-items: center; /* Centrer elementer lodret */
+    justify-content: space-between; /* Fordeler indhold med luft imellem */
+    flex-wrap: wrap; /* Indholdet bryder til næste linje, hvis der ikke er plads */
+    gap: 40px; /* Afstanden mellem  hvert elementer */
+  }
+  
+  .forside__tekst {
+    flex: 1; /* Gør teksten fleksibel og tager meget plads */
+    min-width: 200px; /* Minimum bredde på teksten */
+    margin-bottom: 16px; /* Afstand under teksten */
+  }
+  
+  .forside__overskrift{
+    color: #1380E5; /* Teksten bliver blå */
+    margin-bottom: 16px; /* Aftand under teksten */
+  }
+
+
+  .forside__billed-container {
+    flex: 1; /* Gør billedet fleksibel og tager mere plads */
+    display: flex; /* Elementet lægger side om side */
+    justify-content: center; /* Centrerer indholdet vandret */
+  }
+  
+  .forside__img {
+    width: 100%; /* Tager hele bredden */
+    max-width: 700px; /* Bredden må ikke overstige 700px */
+    height: auto; /* Justere højden automatisk */
+    object-fit: cover; /* Beskærer billedet, så det fylde det hele uden at ødelægges */
+  }
+
+  /* Projekt-sektion */
+  
+  .forside__projekter{
+    text-align: center; /* Teksten centrer */
+  }
+
+  .forside__projekter-overskrift{
+    color: #1380E5; /* Teksten bliver blå */
+    margin-top: 16px; /* Afstand over teksten */
+  }
+  
+  .forside__projekt-liste{
+    display: flex; /* Elementer lægger side om side */ 
+    gap: 16px; /* Afstanden mellem hvert element */
+    justify-content: center; /* Centrerer indholdet vandret */
+    flex-wrap: wrap; /* Indholdet bryder til næste linje, hvis der ikke er plads */
+    margin-top: 16px; /* Afstand over teksten */
+  }
+
+  .forside__projekt{
+    width: 400px; /* Fast bredde */
+    height: 350px; /* Fast højde */
+    overflow: hidden; /* Skjulder det der går ud over boksen */
+    text-align: center; /* Teksten centrer */
+  }
+
+  .forside__projekt-img{
+    width: 100%; /* Tager hele bredden */
+    height: 300px; /* Fast højde */
+    object-fit: cover; /* Beskærer billedet, så det fylde det hele uden at ødelægges */
+  }
+
+  .forside__projekt-titel{
+    margin-top: 8px; /* Afstand over teksten */
+  }
+
+  .forside__projekt-introtekst{
+    margin-top: 20px; /* Afstand over teksten */
+  }
+
+  /* Portefolie knap */
+  .forside__knap {
+    display: inline-block; /* Elementet bliver inline, men tillader paddig, margin og bredde/højde */
+    background-color: #145C9E; /* Baggrundsfarven bliver blå  */
+    color: white; /* Teksten bliver hvid */
+    padding: 0.6rem 32px; /* Giver luft indvendigt: 0.6ram top og bund 32px venstre og højre  */
+    border-radius: 5px; /* Hjørnerne bliver runde */
+    text-decoration: none; /* Fjerner undersktegning */
+    text-align: center; /* Teksten centrer */
+    margin-top: 10px; /* Afstand over teksten */
+  }
+  
+  
+  .forside__knap:hover{
+    background-color:#1380E5; /* Baggrundsfarven bliver blå */
+    color:#FBFFFE; /* Teksten bliver hvid */
+    transition: all 0.3s ease; /* Farveskiftet sker over 0.3 sekunder, mere blød */
+  }
+
+  /* Main Portefoli*/
+
+  /* INTRO */
+  .portfolio__intro {
+    display: flex; /* Elementer lægger side om side */ 
+    flex-wrap: wrap; /* Indholdet bryder til næste linje, hvis der ikke er plads */
+    gap: 16px; /* Afstanden mellem hvert element */
+    padding: 32px 16px; /* Giver luft indvendigt: 32px top og bund 16 venstre og højre  */
+    align-items: center;/* Centrer elementer lodret */
+  }
+  
+  .portfolio__intro-text {
+    flex: 1 1 300px; /* 3 elemter i en: første 1, elementet må vokse for at udfylde plads.Andet 1, elementet må krympe, hvis der ikke er nok plads. 300px er elementets startstørrekse før vokse og krympe */
+  }
+  
+  .portefolio__overskrift {
+    color: #1380E5; /* Teksten bliver blå */
+  }
+  
+  .portfolio__img {
+    max-width: 300px; /* Bredden må ikke overstige 300px */
+    align-self: flex-start; /* Billedet ændres til toppen */
+  }
+  
+  /* PROJEKTER */
+  .portfolio-projects {
+    display: flex; /* Elementer lægger side om side */ 
+    flex-direction: column; /* Elementerne bliver en lodret kolonne og under hinanden */
+    gap: 32px; /* Afstanden mellem hvert element */
+    padding: 16px; /* Giver luft rundt om */
+  }
+  
+  /* Basis styling for projekter */
+  .project {
+    display: flex; /* Elementer lægger side om side */ 
+    flex-direction: row; /* Elementerne lægger side om side vandret */
+    gap: 32px; /* Afstanden mellem hvert element */
+    align-items: flex-start; /* Elementer justeres øverst til hinanden */
+    flex-wrap: wrap; /* Indholdet bryder til næste linje, hvis der ikke er plads */
+    margin-bottom: 16px; /* Afstand under teksten */
+  }
+  
+  .project-image {
+    flex: 1 1 300px; /* 3 elemter i en: første 1, elementet må vokse for at udfylde plads. Andet 1, elementet må krympe, hvis der ikke er nok plads. 300px er elementets startstørrekse før vokse og krympe */
+    max-width: 400px; /* Bredden må ikke overstige 400px */
+    object-fit: cover; /* Beskærer billedet, så det fylde det hele uden at ødelægges */
+    border-radius: 6px; /* Hjørnerne bliver runde */
+  }
+  
+  .project__content {
+    flex: 2 1 400px; /* Indholdet tager dobbelt så meget, som det andet element og har en minimumsbredde på 400px */
+    display: flex; /* Elementer lægger side om side */ 
+    flex-direction: column; /* Elementerne bliver en lodret kolonne og under hinanden */
+    gap: 0.5rem; /* Afstanden mellem hvert element */
+  }
+  
+  .project__title {
+    color: #0071ce; /* Teksten bliver blå */
+  }
+  
+
+  /* Tool styling */
+  .project__tools {
+    display: flex; /* Elementer lægger side om side */ 
+    flex-wrap: wrap; /* Indholdet bryder til næste linje, hvis der ikke er plads */
+    gap: 20px; /* Afstanden mellem hvert element */
+    margin-top: 10px; /* Afstand over teksten */
+  }
+  
+  .projekt__tool {
+    display: flex; /* Elementer lægger side om side */ 
+    flex-direction: column; /* Elementerne bliver en lodret kolonne og under hinanden */
+    align-items: center; /* Centrer elementer lodret */
+    width: 80px; /* Fast bredde */
+  }
+  
+  .tool__icon-wrapper{
+    position: relative; /* Billedet placeres i den normale position */
+    width: 100px; /* Fast bredde */
+    height: 100px; /* Fast højde */
+  }
+
+  .projekt__tool-icon {
+    width: 100px; /* Fast bredde */
+    height: 100px; /* Fast højde */
+    padding: 10px; /* Giver luft rundt om */
+    object-fit: contain; /* Hele billedet bliver vist uden at blive beskåret */
+    display: block; /* Elementer bliver synlig igen */
+  }
+  
+  /* Har fået inspiration til at lave hover effekten på https://www.w3schools.com/css/tryit.asp?filename=trycss_css_image_overlay_fade*/
+  .projekt__tool-overlay{
+    position: absolute; /* Overlayet ligger oven på billedet */
+    top: 0; /* Elementet er helt oppe i toppen */
+    left: 0; /* Elementet er helt ude til venstre */
+    width: 100%; /* Tager hele bredden */
+    height: 100%; /* Tager hele højden */
+    background-color:#145C9E; /* Baggrunds farven bliver blå */
+    display: flex; /* Elementer lægger side om side */ 
+    align-items: center; /* Centrer elementer lodret */
+    justify-content: center; /* Centrerer indholdet vandret */
+    opacity: 0; /* Skjuler elementet */
+    transition: opacity 0.3s ease; /* For en blød fade-in */
+    text-align: center; /* Teksten centrer */
+    border-radius: 8px; /* Hjørnerne bliver runde */
+  }
+
+  .tool__icon-wrapper:hover .projekt__tool-overlay{
+    opacity: 1; /* Musen holdes over, bliver overlayet synlig */
+  }
+
+  .projekt__tool-name {
+    margin-bottom: 16px; /* Afstand under teksten */
+    font-weight: bold; /* Teksten er fed */
+    color:#FBFFFE; /* Teksten bliver hvid */
+    font-size: 15px; /* Teksten størrelse */
+    padding: 10px; /* Giver luft rundt om */
+  }
+
+  /* Z-form */
+  .project:nth-child(even){
+    flex-direction: row-reverse; /* Ændre retningen på hver andet projekt. Gør, at billedet og teksten bytter plads. */
+  }
+  
+  /* Har fået inspiration til at lave slideren fra denne video https://www.youtube.com/watch?v=zwZp-Xdq8m0 og https://www.youtube.com/watch?v=1CZhGDU5cWM&t=31s */
+  /* slider */
+  .image-slider {
+    position: relative; /* Billedet placeres i den normale position */
+    width: 100%; /* Tager hele bredden */
+    max-width: 600px; /* Bredden må ikke overstige 600px */
+    overflow: hidden; /* Skjulder det der går ud over boksen */
+    margin: 0 auto; /* Centrerer slideren på siden */
+  }
+  
+  .image-slider input {
+    display: none; /* Elementet vises ikke */
+  }
+
+  .slider-inner{
+    width: 100%; /* Tager hele bredden */
+    height: 100%; /* Tager hele højden */
+    position: relative; /* Billedet placeres i den normale position */
+  }
+  
+  .slides {
+    display: flex; /* Elementer lægger side om side */ 
+    transition: transform 0.5s ease-in-out; /* Transformation sker i en gliden funktion på 0.5 sekunder. Starter langsomt, går hurtigt på midten og slutter langsomt */
+  }
+  
+  .slide {
+    flex: 1 0 100%; /* Elementet kan vokse og fylde ledig plads. Det sakl ikke krympe, hvis pladsen bliver mindre. Bredden er 100% */
+    height: 100%; /* Tager hele højden */
+    width: 100%; /* Tager hele bredden */
+    display: flex; /* Elementer lægger side om side */ 
+    justify-content: center; /* Centrerer indholdet vandret */
+    align-items: center; /* Centrer elementer lodret */
+  }
+  
+  .slide img, .image-slider video {
+    width: 100%; /* Tager hele bredden */
+    height: auto; /* Justere højden automatisk */
+    object-fit: contain; /* Hele billedet bliver vist uden at blive beskåret */
+    display: block; /* Elementer bliver synlig igen */
+  }
+
+  .slider-nav {
+    position: absolute; /* Elementets nærmeste relative positioner slettets og gør det muligt at bruge top, bottom */
+    bottom: 10px; /* Elementet placeres 10px op fra bunden */
+    left: 50%; /* Elementet flyttes 50% ind fra venstre kant */
+    display: flex; /* Elementer lægger side om side */ 
+    gap: 10px; /* Afstanden mellem hvert element */
+    transform: translateX(-50%); /* Centrere element vandret */
+    z-index: 2; /* Elementet ligger over et andet */
+  }
+  
+  .slider-nav label {
+    width: 12px; /* Fast bredde */
+    height: 12px; /* Fast højde */
+    background-color: #717171; /* Baggrundsfarve grå */
+    border-radius: 50%; /* Hjørnerne bliver runde, da den er 50% er det en cirkel */
+    cursor: pointer; /* Gør musen til klik-hånd, over knappen */
+    transition: background-color 0.3s ease; /* Farveskiftet sker over 0.3 sekunder, mere blød */
+  }
+  
+  /* Pile til slider*/
+  .arrow {
+    position: absolute; /* Elementets nærmeste relative positioner slettets og gør det muligt at bruge top, bottom */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #1380E5; /* Farverne på pilene */
+    font-size: 36px; /* Størrelse på pilene */
+    padding: 8px; /* Giver luft rundt om */
+    border-radius: 50%; /* Hjørnerne bliver runde, da den er 50% er det en cirkel */
+    cursor: pointer; /* Gør musen til klik-hånd, over knappen */
+    z-index: 3; /* Elementet ligger over et andet */
+    transition: background 0.3s ease; /* Farveskiftet sker over 0.3 sekunder, mere blød */
+  }
+
+  .arrow:hover {
+    background: #FBFFFE /* Baggrundsfarve hvid */
+  }
+
+ .prev {
+   left: 10px; /* Elementet flyttes 10px ind fra venstre kant */
+ }
+ .next {
+   right: 10px; /* Elementet flyttes 10px ind fra højre kant */
+ }
+
+ /* Container for pile – skjult som standard */
+  .slider-arrows {
+    display: none; /* Skjuler pile-container */
+    width: 100%; /* Tager hele bredden */
+    position: absolute; /* Elementets nærmeste relative positioner slettets og gør det muligt at bruge top, bottom */
+    top: 0; /* Elementet er helt oppe i toppen */
+    height: 100%; /* Tager hele højden */
+   pointer-events: none; /* Tillad kun klik på pile */
+  }
+
+  .slider-arrows label {
+    pointer-events: auto; /* Gør pilene klikbar */
+    display: flex; /* Elementer lægger side om side */ 
+    align-items: center; /* Centrer elementer lodret */
+    justify-content: center; /* Centrerer indholdet vandret */
+  }
+
+
+  /* Slider til produktfoto */
+  /* Når slide-1 radioknappen er valgt, vises det første slide */
+  #slide1:checked ~ .slides {
+    transform: translateX(0%); /* Flyt slide til start (0%) */
+  }
+  /* Når slide-2 radioknappen er valgt, vises det andet slide */
+  #slide2:checked ~ .slides {
+    transform: translateX(-100%); /* Flyt slide -100% til venstre */
+  }
+  /* Når slide-3 radioknappen er valgt, vises det trejde slide */
+  #slide3:checked ~ .slides {
+    transform: translateX(-200%); /* Flyt slide -200% til venstre */
+  }
+  
+  #slide1:checked ~ .slider-inner .slides {
+    transform: translateX(0%);
+  }
+  #slide2:checked ~ .slider-inner .slides {
+    transform: translateX(-100%);
+  }
+  #slide3:checked ~ .slider-inner .slides {
+    transform: translateX(-200%);
+  }
+  
+  /* Giv aktiv navigation en blå baggrund, når slidet er valgt */
+  #slide1:checked ~ .slider-inner .slider-nav label[for="slide1"],
+  #slide2:checked ~ .slider-inner .slider-nav label[for="slide2"],
+  #slide3:checked ~ .slider-inner .slider-nav label[for="slide3"] {
+    background-color: #1380E5; /* Baggrundsfarven er blå */
+  }
+
+  /* Vis rigtige pile afhængig af valgt slide */
+   #slide1:checked ~ .slider-inner .arrows-slide1,
+   #slide2:checked ~ .slider-inner .arrows-slide2,
+   #slide3:checked ~ .slider-inner .arrows-slide3 {
+     display: flex; /* Gør pile synlige og placerbare */ 
+     justify-content: space-between; /* Placer en pil til venstre og en til højre */
+  }
+
+  /* Slider til Moving art */
+  /* Når slide2-1 radioknappen er valgt, vises det første slide */
+  #slide2-1:checked ~ .slides {
+    transform: translateX(0%); /* Flyt slide til start (0%) */
+  }
+  /* Når slide2-2 radioknappen er valgt, vises det andet slide */
+  #slide2-2:checked ~ .slides {
+    transform: translateX(-100%); /* Flyt slide -100% til venstre */
+  }
+  
+  #slide2-1:checked ~ .slider-inner .slides {
+    transform: translateX(0%);
+  }
+  #slide2-2:checked ~ .slider-inner .slides {
+    transform: translateX(-100%);
+  }
+
+  /* Giv aktiv navigation en blå baggrund, når slidet er valgt */
+  #slide2-1:checked ~ .slider-inner .slider-nav label[for="slide2-1"],
+  #slide2-2:checked ~ .slider-inner .slider-nav label[for="slide2-2"]{
+    background-color: #1380E5; /* Baggrundsfarven er blå */
+  }
+  
+  /* Vis rigtige pile afhængig af valgt slide */
+  #slide2-1:checked ~ .slider-inner .arrows-slide1,
+  #slide2-2:checked ~ .slider-inner .arrows-slide2{
+    display: flex; /* Gør pile synlige og placerbare */ 
+    justify-content: space-between; /* Placer en pil til venstre og en til højre */
+ }
+
+  /* Slider til Redesign hjemmeside */
+  /* Når slide3-1 radioknappen er valgt, vises det første slide */
+  #slide3-1:checked ~ .slides {
+    transform: translateX(0%); /* Flyt slide til start (0%) */
+  }
+  /* Når slide3-2 radioknappen er valgt, vises det andet slide */
+  #slide3-2:checked ~ .slides {
+    transform: translateX(-100%); /* Flyt slide -100% til venstre */
+  }
+  /* Når slide3-3 radioknappen er valgt, vises det trejde slide */
+  #slide3-3:checked ~ .slides {
+    transform: translateX(-200%);  /* Flyt slide -200% til venstre */
+  }
+  
+  #slide3-1:checked ~ .slider-inner .slides {
+    transform: translateX(0%);
+  }
+  #slide3-2:checked ~ .slider-inner .slides {
+    transform: translateX(-100%);
+  }
+  #slide3-3:checked ~ .slider-inner .slides {
+    transform: translateX(-200%);
+  }
+  
+  /* Giv aktiv navigation en blå baggrund, når slidet er valgt */
+  #slide3-1:checked ~ .slider-inner .slider-nav label[for="slide3-1"],
+  #slide3-2:checked ~ .slider-inner .slider-nav label[for="slide3-2"],
+  #slide3-3:checked ~ .slider-inner .slider-nav label[for="slide3-3"] {
+    background-color: #1380E5; /* Baggrundsfarven er blå */
+  }
+
+  /* Vis rigtige pile afhængig af valgt slide */
+  #slide3-1:checked ~ .slider-inner .arrows-slide1,
+  #slide3-2:checked ~ .slider-inner .arrows-slide2,
+  #slide3-3:checked ~ .slider-inner .arrows-slide3 {
+    display: flex; /* Gør pile synlige og placerbare */ 
+    justify-content: space-between; /* Placer en pil til venstre og en til højre */
+ }
+
+  /* Slider til Animation */
+
+  /* Når slide4-1 radioknappen er valgt, vises det første slide */
+  #slid43-1:checked ~ .slides {
+    transform: translateX(0%); /* Flyt slide til start (0%) */
+  }
+  /* Når slide4-2 radioknappen er valgt, vises det andet slide */
+  #slide4-2:checked ~ .slides {
+    transform: translateX(-100%); /* Flyt slide -100% til venstre */
+  }
+  /* Når slide4-3 radioknappen er valgt, vises det trejde slide */
+  #slide4-3:checked ~ .slides {
+    transform: translateX(-200%);  /* Flyt slide -200% til venstre */
+  }
+  
+  #slide4-1:checked ~ .slider-inner .slides {
+    transform: translateX(0%);
+  }
+  #slide4-2:checked ~ .slider-inner .slides {
+    transform: translateX(-100%);
+  }
+  #slide4-3:checked ~ .slider-inner .slides {
+    transform: translateX(-200%);
+  }
+  
+  /* Giv aktiv navigation en blå baggrund, når slidet er valgt */
+  #slide4-1:checked ~ .slider-inner .slider-nav label[for="slide4-1"],
+  #slide4-2:checked ~ .slider-inner .slider-nav label[for="slide4-2"],
+  #slide4-3:checked ~ .slider-inner .slider-nav label[for="slide4-3"]{
+    background-color: #1380E5; /* Baggrundsfarven er blå */
+  }
+
+  /* Vis rigtige pile afhængig af valgt slide */
+  #slide4-1:checked ~ .slider-inner .arrows-slide1,
+  #slide4-2:checked ~ .slider-inner .arrows-slide2,
+  #slide4-3:checked ~ .slider-inner .arrows-slide3 {
+    display: flex; /* Gør pile synlige og placerbare */ 
+    justify-content: space-between; /* Placer en pil til venstre og en til højre */
+ }
+
+
+  /* Slider til APP */
+
+  /* Når slide5-1 radioknappen er valgt, vises det første slide */
+  #slide5-1:checked ~ .slides { 
+    transform: translateX(0%);  /* Flyt slide til start (0%) */
+  }
+
+  /* Når slide5-2 radioknappen er valgt, vises det andet slide */
+  #slide5-2:checked ~ .slides {
+    transform: translateX(-100%); /* Flyt slide -100% til venstre */
+  }
+  
+  #slide5-1:checked ~ .slider-inner .slides {
+    transform: translateX(0%);
+  }
+  #slide5-2:checked ~ .slider-inner .slides {
+    transform: translateX(-100%);
+  }
+  
+  /* Giv aktiv navigation en blå baggrund, når slidet er valgt */
+  #slide5-1:checked ~ .slider-inner .slider-nav label[for="slide5-1"],
+  #slide5-2:checked ~ .slider-inner .slider-nav label[for="slide5-2"]{
+    background-color: #1380E5; /* Baggrundsfarven er blå */
+  }
+
+  /* Vis rigtige pile afhængig af valgt slide */
+  #slide5-1:checked ~ .slider-inner .arrows-slide1,
+  #slide5-2:checked ~ .slider-inner .arrows-slide2 {
+    display: flex; /* Gør pile synlige og placerbare */ 
+    justify-content: space-between; /* Placer en pil til venstre og en til højre */
+ }
+
+  /* Slider til Brushuer */
+
+  /* Når slide6-1 radioknappen er valgt, vises det første slide */
+  #slide6-1:checked ~ .slides { 
+    transform: translateX(0%);  /* Flyt slide til start (0%) */
+  }
+
+  /* Når slide6-2 radioknappen er valgt, vises det andet slide */
+  #slide6-2:checked ~ .slides {
+    transform: translateX(-100%); /* Flyt slide -100% til venstre */
+  }
+  
+  #slide6-1:checked ~ .slider-inner .slides {
+    transform: translateX(0%);
+  }
+  #slide6-2:checked ~ .slider-inner .slides {
+    transform: translateX(-100%);
+  }
+  
+  /* Giv aktiv navigation en blå baggrund, når slidet er valgt */
+  #slide6-1:checked ~ .slider-inner .slider-nav label[for="slide6-1"],
+  #slide6-2:checked ~ .slider-inner .slider-nav label[for="slide6-2"]{
+    background-color: #1380E5; /* Baggrundsfarven er blå */
+  }
+
+  /* Vis rigtige pile afhængig af valgt slide */
+  #slide6-1:checked ~ .slider-inner .arrows-slide1,
+  #slide6-2:checked ~ .slider-inner .arrows-slide2 {
+    display: flex; /* Gør pile synlige og placerbare */ 
+    justify-content: space-between; /* Placer en pil til venstre og en til højre */
+ }
+
+  /* Main Om mig */
+  .om__intro {
+    display: flex; /* Elementer lægger side om side */ 
+    gap: 20px; /* Afstanden mellem hvert element */
+    align-items: center; /* Centrer elementer lodret */
+    flex-direction: row; /* Elementerne lægger side om side vandret */
+    flex-wrap: wrap; /* Indholdet bryder til næste linje, hvis der ikke er plads */
+  }
+  
+  .om__tekst {
+    flex: 1; /* Gør teksten fleksibel og tager mere plads */
+    min-width: 300px; /* Minimum bredde på teksten */
+    margin-bottom: 16px; /* Afstand under teksten */
+  }
+  
+  .om__overskrift{
+    color: #1380E5; /* Teksten er blå */
+  }
+
+  .om__billed-wrapper {
+    flex: 1; /* Elementet fylder lige så meget som andre flex-items og kan udvide efter behov */
+    display: flex; /* Elementer lægger side om side */ 
+    align-items: center; /* Centrer elementer lodret */
+    justify-content: center; /* Centrerer indholdet vandret */
+  }
+  
+  .om__billed-img {
+    width: 100%; /* Tager hele bredden */
+    height: 100%; /* Tager hele højden */
+    object-fit: cover; /* Beskærer billedet, så det fylde det hele uden at ødelægges */
+  }
+
+  /* Kompetencer*/
+  .om__kompetencer{
+    margin-top: 40px; /* Afstand over teksten */
+  }
+
+  .om__kompetence-beskrivelse{
+    margin-top: 16px; /* Afstand over teksten */
+  }
+
+
+  /* Tekst og Logo */
+  .om__ikoner{
+    display: flex; /* Elementer lægger side om side */ 
+    flex-wrap: wrap; /* Indholdet bryder til næste linje, hvis der ikke er plads */
+    gap: 30px; /* Afstanden mellem hvert element */
+    margin-top: 20px; /* Afstand over teksten */
+    justify-content: center; /* Centrerer indholdet vandret */
+  }
+
+  .om__ikon{
+    width: 120px; /* Fast bredde */
+    text-align: center; /* Teksten centrer */
+  }
+
+  .om__ikon-img{
+    width: 100px; /* Fast bredde */
+    height: 100px; /* Fast højde */
+    padding: 10px; /* Giver luft rundt om */
+  }
+
+  .om__ikon-tekst{
+    margin-top: 8px; /* Afstand over teksten */
+  }
+
+  /* Kontakt */
+  .om__kontakt{
+    text-align: center; /* Teksten centrer */
+    margin-top: 40px; /* Afstand over teksten */
+    padding: 40px 20px; /* Giver luft indvendigt: 40px top og bund 20px venstre og højre  */
+  }
+
+  .om__kontakt-tekst{
+    margin-bottom: 10px; /* Afstand under teksten */
+  }
+
+  .om__kontakt-knap{
+    display: inline-block; /* Elemterne stå ved siden af hinaden */
+    background-color: #145C9E; /* Baggrundsfarven er blå */
+    color: white; /* Teksten er hvid */
+    padding: 12px 28px; /* Giver luft indvendigt: 12px top og bund 28px venstre og højre  */
+    border-radius: 5px; /* Hjørnerne bliver runde */
+    text-decoration: none; /* Fjerner undersktegning */
+    text-align: center; /* Teksten centrer */
+  }
+
+  .om__kontakt-knap:hover{
+    background-color:#1380E5; /* Baggrundsfarven er blå */
+    color:#FBFFFE; /* Teksten er hvid */
+    transition: all 0.3s ease; /* Farveskiftet sker over 0.3 sekunder, mere blød */
+  }
+
+  /* Main Kontakt*/ 
+  /* Har tager inspiration ud fra denne video https://www.youtube.com/watch?v=gWgzzVVcqfA 
+  til kontaktformularen */
+
+  .kontakt__container{
+    display: flex; /* Elementer lægger side om side */ 
+    justify-content: space-between; /* Fordeler pladsen mellem dem med luft imellem dem */
+    padding: 35px; /* Giver luft rundt om */
+    gap: 40px; /* Afstanden mellem hvert element */
+    max-width: 100%; /* Max bredde på 100% */
+    margin: 0 auto; /* Centrerer teksten på siden */
+    flex-direction: row; /* Elementerne lægger side om side vandret */
+    flex-wrap: wrap; /* Indholdet bryder til næste linje, hvis der ikke er plads */
+  }
+ 
+  
+  .kontakt__tekst{
+    flex: 1; /* Gør teksten fleksibel og tager mere plads */
+    min-width: 300px; /* Minimum bredde på teksten */
+  }
+
+  .kontakt__overskrift{
+    color: #1380E5; /* Teksten er blå */
+    margin-bottom: 12px; /* Afstanden under teksten */
+  }
+
+  .kontakt__beskrivelse{
+    margin-bottom: 24px; /* Afstand under teksten */
+  }
+
+  .kontakt__billede-wrapper{
+    flex: 1; /* Gør billedet fleksibel og tager mere plads */
+    min-width: 250px; /* Minimum bredde på teksten */
+    display: flex; /* Elementer lægger side om side */ 
+    align-items: center; /* Centrer elementer lodret */
+    justify-content: center; /* Centrerer indholdet vandret */
+  }
+ 
+  .kontakt__img{
+    width: 100%; /* Tager hele bredden */
+    height: auto; /* Justere højden automatisk */
+    max-height: 600px; /* Højden må ikke overstige 600px */
+    object-fit: cover; /* Beskærer billedet, så det fylde det hele uden at ødelægges */
+  }
+
+  .kontakt__lable{
+    display: block; /* Gør label står på egen linje */ 
+    margin: 12px 0 4px; /* Afstand over og under */ 
+    color: #1380E5; /* Teksten farve er blå */
+  }
+
+  .kontakt__input,
+  .kontakt__textarea{
+    width: 100%; /* Tager hele bredden */
+    padding: 10px; /* Giver luft rundt om */
+    border: 1px solid #090C08; /* Sort kant rundt om boxen */ 
+    border-radius: 4px; /* Hjørnerne bliver runde */ 
+  }
+
+  .kontakt__knap{
+    margin-top: 16px; /* Afstand over teksten */
+    padding: 10px 20px; /* Giver luft indvendigt: 10px top og bund 20px venstre og højre  */ 
+    background-color: #145C9E; /* Baggrundsfarven er blå */
+    color: #FBFFFE; /* Teksten er hvid */
+    border: none; /* Fjerner standardkant */ 
+    border-radius: 4px; /* Hjørnerne bliver runde */
+    cursor: pointer; /* Gør musen til klik-hånd, over knappen */ 
+    width: 100px; /* Fast bredde */
+    align-self: center; /* Centrer elementet lodret, uafhængiget af andre elementer */
+  }
+
+  /* Bagrunden på knappen skifter fra mørkeblå til lyseblå */
+  .kontakt__knap:hover{
+    background-color:#1380E5; /* Baggrundsfarven er blå */
+    color:#FBFFFE; /* Teksten er hvid */
+    transition: all 0.3s ease; /* Farveskiftet sker over 0.3 sekunder, mere blød */
+  }
+
+  /* Footer */
+  .footer{
+    background-color: #1380E5; /* Baggrundsfarven er blå */
+    color: #FBFFFE; /* Teksten er hvid */
+    display: flex; /* Elementer lægger side om side */ 
+    justify-content: space-between; /* Fordeler pladsen mellem dem med luft imellem dem */
+    padding: 32px 64px; /* Giver luft indvendigt: 32px top og bund 64 venstre og højre  */
+    flex-wrap: wrap; /* Indholdet bryder til næste linje, hvis der ikke er plads */
+  }
+
+  .footer__sektion-hojre{
+    text-align: right; /* Teksten rettes til højre */
+  }
+
+  .footer__sektion{
+    flex: 1; /* Sektionen fylder lige meget som andre sektioner*/
+    min-width: 200px; /* Minimum bredde på teksten */
+  }
+  
+  .footer__overskrift{
+    margin-bottom: 16px; /* Afstand under teksten */
+  }
+
+  /* Lister og punkter */
+  .footer__liste{
+    list-style: none; /* Fjerner punkttegn fra listen */
+  }
+  
+  .footer__item{
+    margin-bottom: 8px; /* Afstand under teksten */
+  }
+
+  .footer__link{
+    color: #FBFFFE; /* Teksten er hvid */
+    text-decoration: none; /* Fjerner understegning på links */
+  }
+
+  /* Teskten skifter fra hvid til sort når musen er over. */
+  .footer__link:hover{
+    color:#090C08 ; /* Teksten er sort */
+    transition: all 0.3s ease; /* Farveskiftet sker over 0.3 sekunder, mere blød */
+  } 
+
+
+  /* Responsiv tilpasning */
+  @media (max-width: 600px) { /* Alt CSS aktiveres, hvis skærmbredden er 600px eller mindre */
+    .intro {
+      flex-direction: column; /* Ændres fra row til colum - stables lodret i stedet for vandret */
+      text-align: center; /* Teksten centrerer */
+    }
+  
+    /* Navigation */
+   .navbar__links{
+    position: absolute; /* Linklisten bliver absolut positionet */
+    top: 70px; /* Placering fra toppen */
+    right: 0; /*  */
+    height: 170px; /* Højden på navigationsmenuen */
+    background-color: #1380E5; /* Baggrundsfarven er blå */
+    flex-direction: column; /* Ændres fra row til colum - stables lodret i stedet for vandret */
+    width: 100%; /* Tager hele bredden */
+    align-items: center; /* Centrerer menupunkterne centralt */
+    display: none; /* Skjuler menuen som standard */
+    }
+
+    .navbar__links-active{
+      display: flex; /* Viser menuen, når klasse tilføjes */
+    }
+
+    /* Burger-menu-ikoet, bliver synligt */
+    .navbar__burger{
+      display: flex; /* Viser burger-ikonet */
+    }
+
+
+    .forside__intro{
+      flex-direction: column; /* Billedet placeres under teksten */
+      text-align: center; /* Teksten centrer */
+    }
+
+    .forside__billed{
+      order: 2; /* Søger for at billedet kommer efter teksten*/
+    }
+
+    .forside__tekst{
+      order: 1; /* Teksten kommer først */
+    }
+
+    .project{
+      flex-direction: column !important; /* Tvinger projekter til at stable lodret */
+    }
+
+    .project-image,
+    .project__content {
+      flex: 1 1 100%; /* Både billede og indhold fuld bredde */
+      max-width: 100%; /* Maks bredde 100% */
+    }
+
+    .om__intro{
+      flex-direction: column; /* Elementerne bliver en lodret kolonne og under hinanden */
+    }
+
+    /* Footer */
+    .footer{
+      flex-direction: column; /* Elementerne bliver en lodret kolonne og under hinanden */
+      align-items: center; /* Centrerer indholdet vandret */
+      text-align: center; /* Teksten centrer */
+      padding: 32px; /* Giver luft rundt om */
+    }
+
+    .footer__sektion-hojre{
+      text-align: center; /* Teksten centrer */
+    }
+
+    .footer__sektion{
+      margin-bottom: 32px; /* Afstand under teksten */
+    }
+  }
+  

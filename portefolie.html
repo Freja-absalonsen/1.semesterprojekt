@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <!-- Fortæller browseren, at tegnsættet er UTF-8, som understøtter danske bogstaver (æ,ø,å) og mange specialtegn -->
+  <meta charset="UTF-8" />
+
+  <!-- Gør siden responsiv. Width, følger breddens enhed. Intitale, siden kan ikke zoomes ind eller ud som standard. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Titlen i browseren -->
+  <title>Absalonsen.com</title>
+
+  <!-- Linker til et ekstern CSS-stylesheet -->
+  <link rel="stylesheet" href="index.css" />
+
+  <!-- Skrifttype hentet fra google og refere til stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Pile hentet fra google og refere til stylesheet -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+  
+    <!-- Header og Navigationsbar -->
+  <header class="navbar">
+      <div class="navbar__logo-container">
+        <img src="img/Logo.png" alt="Logo" class="navbar__logo-img" />
+        <a href="index.html" class="navbar__logo-text">Absalonsen.com</a>
+      </div>
+     
+      <!-- Navigations punkter -->
+      <nav class="navbar__nav">
+        <ul class="navbar__links">
+          <li class="navbar__item">
+            <a href="portefolie.html" class="navbar__link">Portefolie</a>
+          </li>
+
+          <li class="navbar__item">
+            <a href="ommig.html" class="navbar__link">Om mig</a>
+          </li>
+
+          <li class="navbar__item">
+            <a href="kontakt.html" class="navbar__link navbar__link--button" >Kontakt</a>
+          </li>
+        </ul>
+
+        <!-- Burgerns streger -->
+        <div class="navbar__burger">
+        <div class="navbar__burger-line"></div>
+        <div class="navbar__burger-line"></div>
+        <div class="navbar__burger-line"></div>
+        </div>
+      </nav>
+  </header>
+
+  <!-- Javascript til burger menu fået inspiration fra denne video https://www.youtube.com/watch?v=aNDqzlAKmZc -->
+  <script>
+    const burger =document.querySelector('.navbar__burger');
+    const nav = document.querySelector('.navbar__links');
+
+    burger.addEventListener('click', () => {
+    nav.classList.toggle('navbar__links-active');
+    });
+  </script>
+
+  <main class="portfolio">
+    <section class="portfolio__intro">
+      <div class="portfolio__intro-text">
+        <h1 class="portefolio__overskrift">Min portefolie</h1>
+        <p class="portefolio__beskrivelse">Her præsenteres et udvalg af projekter, 
+          der spænder fra kreativt design til strategisk problemløsning. 
+          Hvert projekt er nøje udvalgt for at demonstrere mine faglige kompetencer 
+          og min motivation for at skabe løsninger, der forener innovation og relevans.</p>
+      </div>
+      <div class="portefolie__imge-wrapper">
+      <img src="img/Kompetancer.png" alt="Freja stå med ryggen til og peger på hendes ryg" class="portfolio__img">
+      </div>
+    </section>
+
+    <!-- Har fået inspiration til at lave slideren fra denne video https://www.youtube.com/watch?v=zwZp-Xdq8m0  og https://www.youtube.com/watch?v=1CZhGDU5cWM&t=31s -->
+    <section class="portfolio-projects">
+      
+      <!-- Produktfoto -->
+      <article class="project">
+        
+        <div class="image-slider">
+          <!-- Radio knapper -->
+          <input type="radio" name="slider1" id="slide1" checked>
+          <input type="radio" name="slider1" id="slide2">
+          <input type="radio" name="slider1" id="slide3">
+        
+          <!-- Indpak slides og navigation sammen -->
+          <div class="slider-inner">
+            <!-- Slides -->
+            <div class="slides">
+              <div class="slide">
+                <img src="img/Produkt-Pepsi-max.png" alt="En Pepsi Max der ligger i sandet">
+              </div>
+              <div class="slide">
+                <img src="img/Produkt-kamara.png" alt="3 forskellige kamara" >
+              </div>
+              <div class="slide">
+                <img src="img/Produkt-kaffe.png" alt="Kaffe sirup i ligger i kaffebønner">
+              </div>
+            </div>
+            
+            <!-- Pile -->
+            <div class="slider-arrows arrows-slide1">
+              <label for="slide3" class="prev arrow material-icons">chevron_left</label>
+              <label for="slide2" class="next arrow material-icons">chevron_right</label>
+            </div>
+
+            <div class="slider-arrows arrows-slide2">
+              <label for="slide1" class="prev arrow material-icons">chevron_left</label>
+              <label for="slide3" class="next arrow material-icons">chevron_right</label>
+            </div>
+
+            <div class="slider-arrows arrows-slide3">
+              <label for="slide2" class="prev arrow material-icons">chevron_left</label>
+              <label for="slide1" class="next arrow material-icons">chevron_right</label>
+            </div>
+
+            <!-- Navigation -->
+            <div class="slider-nav">
+              <label for="slide1"></label>
+              <label for="slide2"></label>
+              <label for="slide3"></label>
+            </div>
+          </div>
+        </div>
+    
+        <div class="project__content">
+          <h2 class="project__title">Produktfoto</h2>
+          <p class="project__text">
+            Professionelle produktbilleder af udvalgte genstande, hvor hvert billede er redigeret med fokus 
+            på at fremhæve stemning, æstetik og detalje. Resultatet skaber en særlig atmosfære omkring produktet.
+          </p>
+
+          <!-- Værktøjs ikoner -->
+          <!-- Har fået inspiration til at lave hover effekten på https://www.w3schools.com/css/tryit.asp?filename=trycss_css_image_overlay_fade -->
+          <div class="project__tools">
+            <div class="projekt__tool">
+
+              <!-- Adobe Lightroom Classic -->
+              <div class="tool__icon-wrapper">
+                <img class="projekt__tool-icon" src="img/Adobe-Lightroom Classic-Logo.png" alt="Adobe Lightroom Classic Logo" />
+                <div class="projekt__tool-overlay">
+                  <p class="projekt__tool-name">Adobe Lightroom Classic</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Moving art -->
+      <article class="project">
+        <div class="image-slider">
+          <!-- Radio knapper -->
+          <input type="radio" name="slider2" id="slide2-1" checked>
+          <input type="radio" name="slider2" id="slide2-2">
+          <input type="radio" name="slider2" id="slide2-3">
+        
+          <!-- Indpak slides og navigation sammen -->
+          <div class="slider-inner">
+            <!-- Slides -->
+            <div class="slides">
+              <div class="slide">
+                <img src="img/Moving-art.png" alt="Billedremme med Olsenbanden inden i">
+              </div>
+              <div class="slide">
+                <video src="Video/Moving Art - Olsen Banden.mp4" controls muted playsinline alt="Video af moving art">
+              </div>
+            </div>
+        
+            <!-- Pile -->
+            <div class="slider-arrows arrows-slide1">
+              <label for="slide2-1" class="prev arrow material-icons">chevron_left</label>
+              <label for="slide2-2" class="next arrow material-icons">chevron_right</label>
+            </div>
+
+            <div class="slider-arrows arrows-slide2">
+              <label for="slide2-1" class="prev arrow material-icons">chevron_left</label>
+              <label for="slide2-2" class="next arrow material-icons">chevron_right</label>
+            </div>
+
+            <!-- Navigation -->
+            <div class="slider-nav">
+              <label for="slide2-1"></label>
+              <label for="slide2-2"></label>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="project__content">
+          <h2 class="project__title">Moving art</h2>
+          <p class="project__text">Animation inspireret af Olsenbanden, skabt med fokus på at bringe et kunstværk til 
+            live gennem bevægelse. Resultatet er en legende og visuelt fortællende animation.
+          </p>
+          
+          <!-- Værktøjs ikoner -->
+          <!-- Har fået inspiration til at lave hover effekten på https://www.w3schools.com/css/tryit.asp?filename=trycss_css_image_overlay_fade -->
+          <div class="project__tools">
+
+            <!-- Adobe Photoshop -->
+            <div class="projekt__tool">
+              <div class="tool__icon-wrapper">
+                <img class="projekt__tool-icon" src="img/Photoshop-Logo.png" alt="Adobe Photoshop Logo" />
+                <div class="projekt__tool-overlay">
+                  <p class="projekt__tool-name">Adobe Photoshop</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Adobe After Effekt -->
+            <div class="projekt__tool">
+              <div class="tool__icon-wrapper">
+                <img class="projekt__tool-icon" src="img/After-Effekt-Logo.png" alt="Adobe After Effekt logo" />
+                <div class="projekt__tool-overlay">
+                  <p class="projekt__tool-name">Adobe After Effekt</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Adobe Premiere pro -->
+            <div class="projekt__tool">
+              <div class="tool__icon-wrapper">
+                <img class="projekt__tool-icon" src="img/Premiere-Pro-Logo.png" alt="Adobe Premiere Pro logo" />
+                <div class="projekt__tool-overlay">
+                  <p class="projekt__tool-name">Adobe Premiere pro</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </article>
+  
+      <!-- Hjemmeside -->
+      <article class="project">
+        
+        <div class="image-slider">
+          <!-- Radio knapper -->
+          <input type="radio" name="slider3" id="slide3-1" checked>
+          <input type="radio" name="slider3" id="slide3-2">
+          <input type="radio" name="slider3" id="slide3-3">
+        
+          <!-- Indpak slides og navigation sammen -->
+          <div class="slider-inner">
+            <!-- Slides -->
+            <div class="slides">
+              <div class="slide">
+                <img src="img/mockup-computer.png" alt="Projektbillede 1">
+              </div>
+              <div class="slide">
+                <img src="img/Redesign-hjemmeside-bowlingkugler.png" alt="Projektbillede 2">
+              </div>
+              <div class="slide">
+                <img src="img/Redesign-hjemmeside-forside.png" alt="Projektbillede 3">
+              </div>
+            </div>
+        
+            <!-- Pile -->
+            <div class="slider-arrows arrows-slide1">
+              <label for="slide3-3" class="prev arrow material-icons">chevron_left</label>
+              <label for="slide3-2" class="next arrow material-icons">chevron_right</label>
+            </div>
+
+            <div class="slider-arrows arrows-slide2">
+              <label for="slide3-1" class="prev arrow material-icons">chevron_left</label>
+              <label for="slide3-3" class="next arrow material-icons">chevron_right</label>
+            </div>
+
+            <div class="slider-arrows arrows-slide3">
+              <label for="slide3-2" class="prev arrow material-icons">chevron_left</label>
+              <label for="slide3-1" class="next arrow material-icons">chevron_right</label>
+            </div>
+
+            <!-- Navigation -->
+            <div class="slider-nav">
+              <label for="slide3-1"></label>
+              <label for="slide3-2"></label>
+              <label for="slide3-3"></label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project__content">
+          <h2 class="project__title">Hjemmeside</h2>
+          <p class="project__text">Som en del af en studiegruppe arbejdede jeg på et redesign af en eksisterende hjemmeside. 
+            Jeg havde ansvaret for at udvikle wireframes og bidrog væsentligt til udarbejdelsen af prototyper.
+          </p>
+          
+          <!-- Værktøjs ikoner -->
+          <!-- Har fået inspiration til at lave hover effekten på https://www.w3schools.com/css/tryit.asp?filename=trycss_css_image_overlay_fade -->
+          <div class="project-tools">
+
+            <!-- Figma -->
+            <div class="projekt__tool">
+              <div class="tool__icon-wrapper">
+                <img class="projekt__tool-icon" src="img/Figma-Logo.png" alt="Figma logo" />
+                <div class="projekt__tool-overlay">
+                  <p class="projekt__tool-name">Figma</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+  
+      <!-- Animation -->
+      <article class="project">
+        <div class="image-slider">
+          <!-- Radio knapper -->
+          <input type="radio" name="slider4" id="slide4-1" checked>
+          <input type="radio" name="slider4" id="slide4-2">
+          <input type="radio" name="slider4" id="slide4-3">
+        
+          <!-- Indpak slides og navigation sammen -->
+          <div class="slider-inner">
+            <!-- Slides -->
+            <div class="slides">
+              <div class="slide">
+                <img src="img/Animation-forside.png" alt="Åben computer med et smily ansigt">
+              </div>
+              <div class="slide">
+                <img src="img/Animation-opbgyning.png" alt="Animations opbygning på Adobe Illustrator">
+              </div>
+              <div class="slide">
+                <video src="Video/Animation.mov" controls muted playsinline alt="Video af animationen"></video>
+              </div>
+            </div>
+
+            <!-- Pile -->
+            <div class="slider-arrows arrows-slide1">
+              <label for="slide4-3" class="prev arrow material-icons">chevron_left</label>
+              <label for="slide4-2" class="next arrow material-icons">chevron_right</label>
+            </div>
+
+            <div class="slider-arrows arrows-slide2">
+              <label for="slide4-1" class="prev arrow material-icons">chevron_left</label>
+              <label for="slide4-3" class="next arrow material-icons">chevron_right</label>
+            </div>
+
+            <div class="slider-arrows arrows-slide3">
+              <label for="slide4-2" class="prev arrow material-icons">chevron_left</label>
+              <label for="slide4-1" class="next arrow material-icons">chevron_right</label>
+            </div>
+        
+            <!-- Navigation -->
+            <div class="slider-nav">
+              <label for="slide4-1"></label>
+              <label for="slide4-2"></label>
+              <label for="slide4-3"></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="project__content">
+          <h2 class="project__title">Animation</h2>
+          <p class="project__text">Kort animationssekvens designet og animeret fra bunden med fokus på enkelthed, 
+            visuel udtryk og præcis timing. Projektet illustrerer, hvordan minimalistisk animation kan formidle 
+            karakter og stemning på en effektiv måde.
+          </p>
+          
+          <!-- Værktøjs ikoner -->
+          <!-- Har fået inspiration til at lave hover effekten på https://www.w3schools.com/css/tryit.asp?filename=trycss_css_image_overlay_fade -->
+          <div class="project__tools">
+
+            <!-- Adobe Illustrator -->
+            <div class="projekt__tool">
+              <div class="tool__icon-wrapper">
+                <img class="projekt__tool-icon" src="img/Adobe-Illustrator-Logo.png" alt="Adobe Illustrator Logo" />
+                <div class="projekt__tool-overlay">
+                  <p class="projekt__tool-name">Adobe Illustrator</p>
+                </div>
+              </div>
+            </div>
+
+           <!-- Visual Studio Code -->
+            <div class="projekt__tool">
+              <div class="tool__icon-wrapper">
+                <img class="projekt__tool-icon" src="img/Visual-Studio-Logo.png" alt="Visual Studio Code Logo" />
+                <div class="projekt__tool-overlay">
+                  <p class="projekt__tool-name">Visual Studio Code</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </article>
+  
+      <!-- APP -->
+      <article class="project">
+
+        <div class="image-slider">
+          <!-- Radio knapper -->
+          <input type="radio" name="slider5" id="slide5-1" checked>
+          <input type="radio" name="slider5" id="slide5-2">
+        
+          <!-- Indpak slides og navigation sammen -->
+          <div class="slider-inner">
+            <!-- Slides -->
+            <div class="slides">
+              <div class="slide">
+                <img src="img/App-mock-up.png" alt="Parkerings APP forside">
+              </div>
+              <div class="slide">
+                <img src="img/Parkerings-app.png" alt="Parkerings APP Sider">
+              </div>
+            </div>
+        
+            <!-- Pile -->
+            <div class="slider-arrows arrows-slide1">
+              <label for="slide5-1" class="prev arrow material-icons">chevron_left</label>
+              <label for="slide5-2" class="next arrow material-icons">chevron_right</label>
+            </div>
+
+            <div class="slider-arrows arrows-slide2">
+              <label for="slide5-1" class="prev arrow material-icons">chevron_left</label>
+              <label for="slide5-2" class="next arrow material-icons">chevron_right</label>
+            </div>
+
+            <!-- Navigation -->
+            <div class="slider-nav">
+              <label for="slide5-1"></label>
+              <label for="slide5-2"></label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project__content">
+          <h2 class="project__title">App</h2>
+          <p class="project__text">Udvikling af en parkerings-app, med fokus på at gøre det nemt og intuitivt 
+            at reservere en parkeringsplads. Appen er designet med fokus på brugervenlighed og enkel navigation, 
+            der imødekommer behovet for en effektiv parkeringsløsning.
+          </p>
+          
+          <!-- Værktøjs ikoner -->
+          <!-- Har fået inspiration til at lave hover effekten på https://www.w3schools.com/css/tryit.asp?filename=trycss_css_image_overlay_fade -->
+          <div class="project-tools">
+
+            <!-- Figma -->
+              <div class="projekt__tool">
+                <div class="tool__icon-wrapper">
+                  <img class="projekt__tool-icon" src="img/Figma-Logo.png" alt="Figma logo" />
+                  <div class="projekt__tool-overlay">
+                    <p class="projekt__tool-name">Figma</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </article>
+  
+      <!-- Brushuer -->
+      <article class="project">
+       
+        <div class="image-slider">
+          <!-- Radio knapper -->
+          <input type="radio" name="slider6" id="slide6-1" checked>
+          <input type="radio" name="slider6" id="slide6-2">
+        
+          <!-- Indpak slides og navigation sammen -->
+          <div class="slider-inner">
+            <!-- Slides -->
+            <div class="slides">
+              <div class="slide">
+                <img src="img/Brushuer-forside.png" alt="Brushuer for UCL">
+              </div>
+              <div class="slide">
+                <img src="img/Brushuer-side.png" alt="En åben Bruchren">
+              </div>
+            </div>
+
+            <!-- Pile -->
+            <div class="slider-arrows arrows-slide1">
+              <label for="slide6-1" class="prev arrow material-icons">chevron_left</label>
+              <label for="slide6-2" class="next arrow material-icons">chevron_right</label>
+            </div>
+
+            <div class="slider-arrows arrows-slide2">
+              <label for="slide6-1" class="prev arrow material-icons">chevron_left</label>
+              <label for="slide6-2" class="next arrow material-icons">chevron_right</label>
+            </div>
+        
+            <!-- Navigation -->
+            <div class="slider-nav">
+              <label for="slide6-1"></label>
+              <label for="slide6-2"></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="project__content">
+          <h2 class="project__title">Brushuer</h2>
+          <p class="project__text">Designet og udarbejdet en informativ brochure med fokus på Multimediedesigneruddannelsen. 
+            Bruchren er udviklet med fokus på visuel formidling, målgruppetilpasning og en klar struktur.
+          </p>
+          
+          <!-- Værktøjs ikoner -->
+          <!-- Har fået inspiration til at lave hover effekten på https://www.w3schools.com/css/tryit.asp?filename=trycss_css_image_overlay_fade -->
+
+          <div class="project-tools">
+            <!-- Visual Studio Code -->
+              <div class="projekt__tool">
+                <div class="tool__icon-wrapper">
+                  <img class="projekt__tool-icon" src="img/Visual-Studio-Logo.png" alt="Visual Studio Logo" />
+                  <div class="projekt__tool-overlay">
+                    <p class="projekt__tool-name">Visual Studio Logo</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- Kontakt -->
+    <div class="footer__sektion footer__sektion-venstre">
+     <h3 class="footer__overskrift" >Kontakt</h3>
+     
+     <ul class="footer__liste" >
+       <li class="footer__item" >Email: 
+         <a href="mailto:freja.absalonsen.laursen@gmail.com" class="footer__link">freja.absalonsen.laursen@gmail.com</a>
+       </li>
+ 
+       <li class="footer__item" >Telefon: 
+         <a href="tel:+4525775684" class="footer__link" >+45 25775684</a>
+       </li>
+     </ul>
+    </div>
+ 
+    <!-- Genveje -->
+    <div class="footer__sektion footer__sektion-hojre">
+     <h3 class="footer__overskrift" >Genveje</h3>
+     
+     <ul class="footer__liste">
+       <li class="footer__item">
+         <a href="index.html" class="footer__link">Forside</a>
+       </li>
+ 
+       <li class="footer__item">
+         <a href="portefolie.html" class="footer__link">Portefolie</a>
+       </li>
+ 
+       <li class="footer__item">
+         <a href="ommig.html" class="footer__link">Om mig</a>
+       </li>
+ 
+       <li class="footer__item">
+         <a href="kontakt.html" class="footer__link">Kontakt</a>
+       </li>
+     </ul>
+    </div>
+   </footer>
+ </body>
+ </html>
+ 

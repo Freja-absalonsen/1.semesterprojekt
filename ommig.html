@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <!-- Fortæller browseren, at tegnsættet er UTF-8, som understøtter danske bogstaver (æ,ø,å) og mange specialtegn -->
+  <meta charset="UTF-8" /> 
+
+  <!-- Gør siden responsiv. Width, følger breddens enhed. Intitale, siden kan ikke zoomes ind eller ud som standard. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Titlen i browseren -->
+  <title>Absalonsen.com</title>
+
+  <!-- Linker til et ekstern CSS-stylesheet -->
+  <link rel="stylesheet" href="index.css" />
+
+  <!-- Skrifttype hentet fra google og refere til stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+  
+  <!-- Header og Navigationsbar -->
+  <header class="navbar">
+    <div class="navbar__logo-container">
+      <img src="img/Logo.png" alt="Logo" class="navbar__logo-img" />
+      <a href="index.html" class="navbar__logo-text">Absalonsen.com</a>
+    </div>
+   
+    <!-- Navigations punkter -->
+    <nav class="navbar__nav">
+      <ul class="navbar__links">
+        <li class="navbar__item">
+          <a href="portefolie.html" class="navbar__link">Portefolie</a>
+        </li>
+
+        <li class="navbar__item">
+          <a href="ommig.html" class="navbar__link">Om mig</a>
+        </li>
+
+        <li class="navbar__item">
+          <a href="kontakt.html" class="navbar__link navbar__link--button" >Kontakt</a>
+        </li>
+      </ul>
+
+      <!-- Burgerns streger -->
+      <div class="navbar__burger">
+      <div class="navbar__burger-line"></div>
+      <div class="navbar__burger-line"></div>
+      <div class="navbar__burger-line"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Javascript til burger menu fået inspiration fra denne video https://www.youtube.com/watch?v=aNDqzlAKmZc -->
+  <script>
+  const burger =document.querySelector('.navbar__burger');
+  const nav = document.querySelector('.navbar__links');
+
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('navbar__links-active');
+  });
+  </script>
+
+  <main class="om">
+    <section class="om__intro">
+      <div class="om__tekst">
+        <h2 class="om__overskrift">Om mig</h2>
+        <p class="om__beskrivelse">Hej, jeg hedder Freja. Med min udadvendte og smilende personlighed skaber jeg hurtigt gode relationer 
+          og trives  både i samarbejde med andre og i selvstændige projekter.
+        </p>
+
+        <p class="om__beskrivelse">Jeg sætter stor pris på et positivt arbejdsmiljø, hvor energi og åben dialog er i fokus, da det 
+          inspirerer mig til at yde mit bedste.
+        </p>
+
+        <p class="om__beskrivelse">Jeg er initiativrig, fleksibel og omstillingsparat, hvilket gør mig i stand til hurtigt at 
+          sætte mig ind i nye opgaver og arbejdsmetoder.
+        </p>
+
+        <p class="om__beskrivelse">Jeg møder altid op med godt humør og en positiv indstilling og tager udfordringer som muligheder
+          for læring og udvikling. Min evne til at bevare overblikket og arbejde struktureret sikrer, 
+          at jeg leverer kvalitetsarbejde til tiden.
+        </p>
+
+        <p class="om__beskrivelse">Jeg er passioneret omkring digitalt design og visuel kommunikation og følger løbende med i de 
+          nyeste trends og teknologier inden for multimediedesign. Det giver mig mulighed for at skabe 
+          løsninger, der både er brugervenlige, innovative og æstetisk gennemarbejdede.
+        </p>
+        
+      </div>
+
+      <div class="om__billed-wrapper">
+        <img src="img/Om mig ny.png" alt="Portræt af Frja" class="om-billed-img">
+      </div>
+    </section>
+
+    <section class="om__kompetencer">
+      <h2 class="om__overskrift">Kompetencer</h2>
+      <p class="om__kompetence-beskrivelse">Mine kompetencer ligger primært inde for Creative Clouds programmer, altså Adobe programmere, 
+        samt Figma og Visual Studio Code. Derudover har jeg erfaring med både foto- og videoproduktion samt UI/UX-design.</p>
+      
+        <div class="om__ikoner">
+
+        <!-- Adobe Illustrator -->
+        <div class="om__ikon">
+          <img src="img/Adobe-Illustrator-Logo.png" alt="Adobe Illustrator" class="om__ikon-img">
+          <p class="om__ikon-tekst">Adobe Illustrator</p>
+        </div>
+
+        <!-- Adobe After Effekt -->
+        <div class="om__ikon">
+          <img src="img/After-Effekt-Logo.png" alt="Adobe After Effekt" class="om__ikon-img">
+          <p class="om__ikon-tekst">Adobe After Effekt</p>
+        </div>
+
+        <!-- Adobe Premiere Pro -->
+        <div class="om__ikon">
+          <img src="img/Premiere-Pro-Logo.png" alt="Adobe Premiere Pro" class="om__ikon-img">
+          <p class="om__ikon-tekst">Adobe Premiere Pro</p>
+        </div>
+
+        <!-- Adobe Photoshop -->
+        <div class="om__ikon">
+          <img src="img/Photoshop-Logo.png" alt="Adobe Photoshop" class="om__ikon-img">
+          <p class="om__ikon-tekst">Adobe Photoshop</p>
+        </div>
+
+        <!-- Adobe Lightroom Classic -->
+        <div class="om__ikon">
+          <img src="img/Adobe-Lightroom Classic-Logo.png" alt="Adobe Lightroom Classic" class="om__ikon-img">
+          <p class="om__ikon-tekst">Adobe Lightroom Classic</p>
+        </div>
+
+        <!-- Adobe InDesign -->
+        <div class="om__ikon">
+          <img src="img/Adobe-InDesign.png" alt="Adobe InDesign" class="om__ikon-img">
+          <p class="om__ikon-tekst">Adobe InDesign</p>
+        </div>
+
+        <!-- Figma -->
+        <div class="om__ikon">
+          <img src="img/Figma-Logo.png" alt="Figma" class="om__ikon-img">
+          <p class="om__ikon-tekst">Figma</p>
+        </div>
+
+        <!-- Visual Studio Code -->
+        <div class="om__ikon">
+          <img src="img/Visual-Studio-Logo.png" alt="Visual Studio Code" class="om__ikon-img">
+          <p class="om__ikon-tekst">Visual Studio Code</p>
+        </div>
+      </div>
+    </section>
+
+    <Section class="om__kontakt">
+      <h2 class="om__overskrift">Høre mere</h2>
+      <p class="om__kontakt-tekst">Ønsker du at høre mere eller har du spørgsmål, er du meget velkommen til at kontakte mig</p>
+      <a href="kontakt.html" class="om__kontakt-knap">Kontakt</a>
+    </Section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- Kontakt -->
+    <div class="footer__sektion footer__sektion-venstre">
+     <h3 class="footer__overskrift" >Kontakt</h3>
+     
+     <ul class="footer__liste" >
+       <li class="footer__item" >Email: 
+         <a href="mailto:freja.absalonsen.laursen@gmail.com" class="footer__link">freja.absalonsen.laursen@gmail.com</a>
+       </li>
+ 
+       <li class="footer__item" >Telefon: 
+         <a href="tel:+4525775684" class="footer__link" >+45 25775684</a>
+       </li>
+     </ul>
+    </div>
+ 
+    <!-- Genveje -->
+    <div class="footer__sektion footer__sektion-hojre">
+     <h3 class="footer__overskrift" >Genveje</h3>
+     
+     <ul class="footer__liste">
+       <li class="footer__item">
+         <a href="index.html" class="footer__link">Forside</a>
+       </li>
+ 
+       <li class="footer__item">
+         <a href="portefolie.html" class="footer__link">Portefolie</a>
+       </li>
+ 
+       <li class="footer__item">
+         <a href="ommig.html" class="footer__link">Om mig</a>
+       </li>
+ 
+       <li class="footer__item">
+         <a href="kontakt.html" class="footer__link">Kontakt</a>
+       </li>
+     </ul>
+    </div>
+   </footer>
+</body>
+</html>
