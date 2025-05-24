@@ -13,22 +13,22 @@
   body,
   .rufina-regular {
     font-family: Rufina, serif; /* Skrift type */
-    font-size: 20px; /* Tekst størelsen */
+    font-size: 18px; /* Tekst størelsen */
     background-color:#FBFFFE; /* Baggrundsfarve hvis */
     line-height: 1.6; /* Linjeafstanden */
   }
 
   /* Angivelse af forksellige skriftstørrelse til overskrifter */
   h1{
-    font-size: 30px; /* Teksten størrelse */
+    font-size: 24px; /* Teksten størrelse når det er en overskrift*/
   }
 
   h2{
-    font-size:25px; /* Teksten størrelse */
+    font-size:20px; /* Teksten størrelse når det er en underoverskrift */
   }
 
   h3{
-    font-size: 20px; /* Teksten størrelse */
+    font-size: 19px; /* Teksten størrelse */
   }
 
   /* Definere to typer af skrifttypen rufina */
@@ -278,7 +278,7 @@
   
   .project-image {
     flex: 1 1 300px; /* 3 elemter i en: første 1, elementet må vokse for at udfylde plads. Andet 1, elementet må krympe, hvis der ikke er nok plads. 300px er elementets startstørrekse før vokse og krympe */
-    max-width: 400px; /* Bredden må ikke overstige 400px */
+    max-width: 600px; /* Bredden må ikke overstige 600px */
     object-fit: cover; /* Beskærer billedet, så det fylde det hele uden at ødelægges */
     border-radius: 6px; /* Hjørnerne bliver runde */
   }
@@ -693,17 +693,16 @@
     color: #1380E5; /* Teksten er blå */
   }
 
-  .om__billed-wrapper {
+  .om__billede-wrapper {
     flex: 1; /* Elementet fylder lige så meget som andre flex-items og kan udvide efter behov */
     display: flex; /* Elementer lægger side om side */ 
     align-items: center; /* Centrer elementer lodret */
     justify-content: center; /* Centrerer indholdet vandret */
   }
   
-  .om__billed-img {
+  .om__billede-img {
     width: 100%; /* Tager hele bredden */
     height: auto; /* Tager hele højden */
-    max-width: 400px;
     object-fit: cover; /* Beskærer billedet, så det fylde det hele uden at ødelægges */
   }
 
@@ -949,17 +948,17 @@
       align-items: center;
     }
 
-    .om__billed-wrapper{
-      justify-content: center;
-      margin-top: 16px;
-      width: 100%;
+    .om__billede-wrapper{
+      justify-content: center; /* Centrerer indholdet vandret */
+      margin-top: 16px; /* Afstand over teksten */
+      width: 100%; /* Tager hele bredden */
     }
 
-    .om__billed-img{
-      width: 100%;
-      max-width: 250px;
-      height: auto;
-      display: block;
+    .om__billede-img{
+      width: 100%; /* Tager hele bredden */
+      max-width: 600px; /* Maks bredde 600px */
+      height: auto; /* Justere højden automatisk */
+      display: block; /* Elementer bliver synlig igen */
     }
 
     /* Footer */
