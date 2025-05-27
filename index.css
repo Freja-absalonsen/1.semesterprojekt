@@ -144,7 +144,7 @@
   /* Sektion indtro */
   .forside__intro {
     display: flex; /* Elementer lægger side om side */ 
-    align-items: center; /* Centrer elementer lodret */
+    align-items: flex-start; /* Elementer starter øverst */
     justify-content: space-between; /* Fordeler indhold med luft imellem */
     flex-wrap: wrap; /* Indholdet bryder til næste linje, hvis der ikke er plads */
     gap: 40px; /* Afstanden mellem  hvert elementer */
@@ -215,7 +215,7 @@
     margin-top: 20px; /* Afstand over teksten */
   }
 
-  /* Portefolie knap */
+  /* Portfolio knap */
   .forside__knap {
     display: inline-block; /* Elementet bliver inline, men tillader paddig, margin og bredde/højde */
     background-color: #145C9E; /* Baggrundsfarven bliver blå  */
@@ -242,15 +242,16 @@
     flex-wrap: wrap; /* Indholdet bryder til næste linje, hvis der ikke er plads */
     gap: 16px; /* Afstanden mellem hvert element */
     padding: 32px 16px; /* Giver luft indvendigt: 32px top og bund 16 venstre og højre  */
-    align-items: center;/* Centrer elementer lodret */
+    align-items: flex-start; /* Elementer starter øverst */
   }
   
   .portfolio__intro-text {
     flex: 1 1 300px; /* 3 elemter i en: første 1, elementet må vokse for at udfylde plads.Andet 1, elementet må krympe, hvis der ikke er nok plads. 300px er elementets startstørrekse før vokse og krympe */
   }
   
-  .portefolio__overskrift {
+  .portfolio__overskrift {
     color: #1380E5; /* Teksten bliver blå */
+    margin-bottom: 16px; /* Aftand under teksten */
   }
   
   .portfolio__img {
@@ -271,7 +272,7 @@
     display: flex; /* Elementer lægger side om side */ 
     flex-direction: row; /* Elementerne lægger side om side vandret */
     gap: 32px; /* Afstanden mellem hvert element */
-    align-items: flex-start; /* Elementer justeres øverst til hinanden */
+    align-items: flex-start; /* Elementer starter øverst */
     flex-wrap: wrap; /* Indholdet bryder til næste linje, hvis der ikke er plads */
     margin-bottom: 16px; /* Afstand under teksten */
   }
@@ -677,7 +678,7 @@
   .om__intro {
     display: flex; /* Elementer lægger side om side */ 
     gap: 20px; /* Afstanden mellem hvert element */
-    align-items: flex-start; /* Centrer elementer lodret */
+    align-items: flex-start; /* Elementer starter øverst */
     flex-direction: row; /* Elementerne lægger side om side vandret */
     flex-wrap: wrap; /* Indholdet bryder til næste linje, hvis der ikke er plads */
   }
@@ -690,6 +691,7 @@
   
   .om__overskrift{
     color: #1380E5; /* Teksten er blå */
+    margin-bottom: 10px; /* Aftand under teksten */
   }
 
   .om__billede-wrapper {
@@ -789,7 +791,7 @@
 
   .kontakt__overskrift{
     color: #1380E5; /* Teksten er blå */
-    margin-bottom: 12px; /* Afstanden under teksten */
+    margin-bottom: 16px; /* Aftand under teksten */
   }
 
   .kontakt__beskrivelse{
@@ -890,10 +892,6 @@
 
   /* Responsiv tilpasning */
   @media (max-width: 600px) { /* Alt CSS aktiveres, hvis skærmbredden er 600px eller mindre */
-    .om__intro {
-      flex-direction: column; /* Ændres fra row til colum - stables lodret i stedet for vandret */
-      text-align: center; /* Teksten centrerer */
-    }
   
     /* Navigation */
    .navbar__links{
@@ -943,8 +941,6 @@
 
     .om__intro{
       flex-direction: column; /* Elementerne bliver en lodret kolonne og under hinanden */
-      text-align: center;
-      align-items: center;
     }
 
     .om__billede-wrapper{
