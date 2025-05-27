@@ -347,7 +347,6 @@
 
   .projekt__tool-name {
     margin-bottom: 16px; /* Afstand under teksten */
-    font-weight: bold; /* Teksten er fed */
     color:#FBFFFE; /* Teksten bliver hvid */
     font-size: 15px; /* Teksten størrelse */
     padding: 10px; /* Giver luft rundt om */
